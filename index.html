@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <title>TOP: Library</title>
+  <script defer src="./script.js"></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+        <h1>The Odin Project: Library</h1>
+    </header>
+    <div class="inputs">
+        <div>
+            <p>Welcome to Odin's Library - where you can keep track of all the wonderful
+                books you've been reading.</p><p>Click the button below and you will unlock a form to add a new book to your queue. Ensure you fill out the new book details correctly as you will only be able to update your "Read" status
+                after submission. 
+            </p>
+            <button class="newBookBtn" onclick="popupForm()">Add New Book</button>
+        </div>
+        <div id="logoDiv">
+            <img src="./media/odin-lined.png" alt="The Odin Project Logo">
+            <span id="logo">Odin's Library</span>
+        </div>
+        <form action="#" onsubmit="addBookToLibrary(); closeForm(); return false;" id="popupForm">
+            <h2>New Book Details</h2>
+            <div>
+                <label for="bookTitle">Title:</label>
+                <input type="text" name="bookTitle" id="bookTitle" placeholder="LOTR" required oninvalid="setCustomValidity(`Please type in the Book's title`);" oninput="setCustomValidity('');">
+            </div>
+            <div>
+                <label for="bookAuthor">Author:</label>
+                <input type="text" name="bookAuthor" id="bookAuthor" placeholder="JRR Tolkien" required oninvalid="setCustomValidity(`Please type in the Book's Author`);" oninput="setCustomValidity('');">
+            </div>
+            <div>
+                <label for="bookPages">Pages:</label>
+                <input type="number" min="0" step="1" name="bookPages" id="bookPages" required oninvalid="setCustomValidity('Please provide a valid number of pages (positive integer');" oninput="setCustomValidity('');">
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Have you read this Book?</legend>
+                    <div>
+                        <label for="yes">Yes I Have</label>
+                        <input type="radio" name="bookRead" id="yes" value="true" checked>
+                    </div>
+                    <div>
+                        <label for="no">No I haven't</label>
+                        <input type="radio" name="bookRead" id="no" value="false">
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <button form="popupForm" value="">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="cards">
+    </div>
+  </div>
+</body>
+</html>

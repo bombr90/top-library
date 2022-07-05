@@ -1,0 +1,214 @@
+/* style.css */
+
+:root   {
+    --background: #800080;
+    --text: #f5f5f5;
+}
+
+*   {
+    font-family: Roboto;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+    border-radius: 4px;
+}
+
+@font-face {
+    font-family: 'Norse-Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Norse-Bold'), url('./media/Norse-Bold.otf') format('openType');
+  }
+
+.wrapper    {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 325px 1fr;
+    background-color: whitesmoke;
+    /* overflow: auto; */
+}
+
+.header {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: auto;
+    grid-template-rows: 1fr; 
+}
+
+.inputs {
+    grid-row:2;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 12px;
+    padding: 6px;
+}
+
+.inputs > div > p {
+    font-size: 1.2rem;
+}
+.inputs > div   {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    color: var(--text);
+    background-color: var(--background);
+    box-shadow: 4px 4px 8px var(--background);
+
+}
+.inputs > div > button    {
+    flex:0;
+    margin: auto;
+    padding: 10px 20px;
+}
+
+#logoDiv    {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logoDiv > span {
+    font-family: 'Norse-Bold';
+    font-size: 3rem;
+
+}
+#logoDiv > img {
+    height: 200px;
+    width: auto;
+}
+#cards  {
+    grid-row: 3;
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 12px;
+    padding: 6px;
+}
+
+.card   {
+    background-color: var(--background);
+    color: var(--text);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr; 
+    gap: 8px;
+    padding: 12px;
+    box-shadow: 4px 4px 8px var(--background);
+   
+}
+
+.card > p   {
+    padding: 12px;
+    margin: auto;
+    line-height: 1.2rem;
+    font-size: .9rem;
+}
+.card > div {
+    display: flex;
+    gap: 12px;
+    padding: 6px;
+}
+
+button  {
+    flex:1;
+    background-color: lightgray;
+    color: darkslategray;
+    border:whitesmoke;
+    font-weight: 700;
+    font-size: 1.2rem;
+
+}
+
+form    {
+    grid-row: 1;
+    grid-column: 2;
+    visibility: hidden;
+    display:grid;
+    background-color: var(--background);
+    color: var(--text);
+    box-shadow: 4px 4px 8px var(--background);
+    gap: 12px;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    align-content: center;
+    justify-content: center;
+}
+
+form > div > button   {
+    grid-column: span 2;
+    padding: 6px 30px;
+    margin: auto;
+
+}
+
+form > div > input {
+    background-color: var(--text);
+}
+form > div  {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 8px;
+    grid-template-columns: 80px 1fr;
+}
+
+form div > label  {
+    text-align: right;
+}
+
+fieldset    {
+    grid-column: span 2;
+    display: flex;
+    padding: 12px;
+}
+
+fieldset > div  {
+    font-weight: 100;
+    font-style: italic;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: auto;
+
+}
+
+h1, h2, h3  {
+    text-align: center;
+    margin: auto;
+    font-family: Norse-Bold;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2  {
+    font-size: 2rem;
+}
+
+h3  {
+    font-size: 1.5rem;
+}
+
+body    {
+height: 100vh;
+width: 100vw;
+
+}
+.show   {
+    visibility:visible;
+}
+
+.hide   {
+    visibility:hidden;
+}
