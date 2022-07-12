@@ -1,14 +1,26 @@
 // Global Variables
 let indexNum = 0;
 
-// Book Constructor
-function Book(title, author, pages, read)  {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.index = indexNum++;
-};
+// Book Class
+class Book  {
+    constructor(title, author, pages, read)  {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.index = indexNum++;
+    }
+
+    info()  {
+        let string = `${this.title} by ${this.author}. ${this.pages} pages. `;
+            return (string += (this.read===true) ? "has read" : "not read yet");
+    }
+
+    toggleRead()  {
+        this.read = !this.read;
+        return (this.read) ? 'Read Status: Has Been Read' : 'Read Status: Has Not Been Read';
+    }    
+}
 
 let myLibrary = [
     new Book('The Hobbit', 'J.R.R Tolkien', 310, false),
@@ -17,16 +29,6 @@ let myLibrary = [
     new Book('LOTR: Return of the King', 'J.R.R Tolkien', 416, true),
     new Book("Harry Potter and the Philosopher's Stone", 'J.K Rowling', 223, true),
 ];
-
-Book.prototype.info = function()    {
-    let string = `${this.title} by ${this.author}. ${this.pages} pages. `;
-        return (string += (this.read===true) ? "has read" : "not read yet");
-};
-
-Book.prototype.toggleRead = function()  {
-    this.read = !this.read;
-    return (this.read) ? 'Read Status: Has Been Read' : 'Read Status: Has Not Been Read';
-}
 
 // Prepopulate library card display with dummy cards
 displayLibrary();
