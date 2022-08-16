@@ -21,6 +21,7 @@
                 books you've been reading.</p><p>Click the button below and you will unlock a form to add a new book to your queue. Ensure you fill out the new book details correctly as you will only be able to update your "Read" status
                 after submission. 
             </p>
+            <div id="liveMsg"></div>
             <button class="newBookBtn" onclick="popupForm()">Add New Book</button>
         </div>
         <div id="logoDiv">
@@ -31,15 +32,15 @@
             <h2>New Book Details</h2>
             <div>
                 <label for="bookTitle">Title:</label>
-                <input type="text" name="bookTitle" id="bookTitle" placeholder="LOTR" required oninvalid="setCustomValidity(`Please type in the Book's title`);" oninput="setCustomValidity('');">
+                <input type="text" name="bookTitle" id="bookTitle" placeholder="LOTR" data-name='Title' required pattern="[a-zA-Z0-9\s]{2,}">
             </div>
             <div>
                 <label for="bookAuthor">Author:</label>
-                <input type="text" name="bookAuthor" id="bookAuthor" placeholder="JRR Tolkien" required oninvalid="setCustomValidity(`Please type in the Book's Author`);" oninput="setCustomValidity('');">
+                <input type="text" name="bookAuthor" id="bookAuthor" placeholder="JRR Tolkien" data-name='Author' required pattern="[a-zA-Z0-9\s]{2,}">
             </div>
             <div>
                 <label for="bookPages">Pages:</label>
-                <input type="number" min="0" step="1" name="bookPages" id="bookPages" required oninvalid="setCustomValidity('Please provide a valid number of pages (positive integer');" oninput="setCustomValidity('');">
+                <input type="number" min="0" step="1" name="bookPages" id="bookPages" data-name='Pages' required>
             </div>
             <div>
                 <fieldset>

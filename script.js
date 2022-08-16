@@ -127,3 +127,33 @@ function addEvents(index)    {
         toggleCardRead(this.dataset.indexnumber);
     });
 }
+
+// javascript validation
+
+const liveMsg = document.getElementById('liveMsg');
+const bookTitle = document.getElementById('bookTitle');
+const bookAuthor = document.getElementById('bookAuthor');
+const bookPages = document.getElementById('bookPages');
+
+bookTitle.addEventListener("input", validateTextInput);
+bookAuthor.addEventListener('input',validateTextInput);
+bookPages.addEventListener("input", validateTextInput);
+
+function validateTextInput(){
+  if(this.validity.valueMissing) {
+    this.setCustomValidity("Empty inputs are invalid");
+    this.reportValidity();
+    liveMsg.innerText = `${this.dataset.name}'s Input cannot be empty`;
+  } else if(this.validity.patternMismatch) {
+    this.setCustomValidity("Alphanumeric names (minimum two characters) only");
+    this.reportValidity();
+    liveMsg.innerText = `${this.dataset.name}'s Input requires alphanumeric values only (two characters minimum)`;
+  } else if(this.validity.stepMismatch || bookTitle.validity.rangeUnderflow) {
+    this.setCustomValidity("Positive integers only.");
+    this.reportValidity();
+    liveMsg.innerText = `${this.dataset.name}'s input must be positive integer`;
+  } else  {
+    liveMsg.innerText = '';
+    this.setCustomValidity('');
+  }
+}

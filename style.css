@@ -24,7 +24,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 60px 325px 1fr;
+    grid-template-rows: 60px 400px 1fr;
     background-color: whitesmoke;
     /* overflow: auto; */
 }
@@ -211,4 +211,16 @@ width: 100vw;
 
 .hide   {
     visibility:hidden;
+}
+
+#liveMsg  {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  color: var(--background);
 }
